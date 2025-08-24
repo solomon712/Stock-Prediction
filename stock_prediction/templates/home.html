@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+<!-- Hero Section -->
+<section class="heroh">
+    <div class="heroh-content">
+        <h1>Welcome to Stock Prediction</h1>
+        <p>Predict stock trends and make smarter investments.</p>
+        <a href="/predictions/" class="ctah">Get Started</a>
+    </div>
+</section>
+
+<!-- Additional Content Below Hero Section -->
+<section class="abouth">
+    <div class="container">
+        <h2>Why Choose Us?</h2>
+        <p>We use advanced algorithms to predict stock prices, providing you with reliable insights for better investment decisions.</p>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2>Key Features</h2>
+        <div class="feature" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-box">
+                <div class="feature-icon">&#9733;</div> <!-- You can replace with icons like FontAwesome or any symbol -->
+                <h3>Real-time Predictions</h3>
+                <p>Stay ahead of the market with real-time stock predictions based on up-to-date data.</p>
+            </div>
+        </div>
+        <div class="feature" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-box">
+                <div class="feature-icon">&#128221;</div>
+                <h3>Customizable Alerts</h3>
+                <p>Set personalized alerts for stocks that matter to you and never miss an opportunity.</p>
+            </div>
+        </div>
+        <div class="feature" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-box">
+                <div class="feature-icon">&#128187;</div>
+                <h3>Data-driven Insights</h3>
+                <p>Leverage our AI-driven insights to make informed investment decisions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

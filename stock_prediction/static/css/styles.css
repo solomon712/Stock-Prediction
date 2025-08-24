@@ -1,0 +1,471 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em; /* Large size for emphasis */
+    font-weight: bold; /* Bold font for strength */
+    color: #333; /* Dark color for text */
+    text-align: center; /* Center the heading */
+    margin-bottom: 0.5em;
+}
+
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 5em 1em;
+    background-color: #f5f5f5;
+}
+
+.cta {
+    display: inline-block;
+    padding: 1em 2em; /* Increase padding for a larger button */
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px; /* Slightly larger border radius */
+    margin-top: 1em;
+    font-size: 1.2em; /* Increase the font size */
+    text-align: center; /* Ensure text is centered */
+    transition: background-color 0.3s ease; /* Add smooth transition on hover */
+}
+
+.cta:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+
+/* Styling the container of the chart */
+.chart-container {
+    width: 60%;  /* Adjust width as needed */
+    max-width: 600px;  /* Set maximum width */
+    margin: 30px auto;  /* Center the chart on the page */
+    padding: 20px;
+    background-color: #ffffff;  /* Background color for the box */
+    border: 2px solid #000000;  /* Border around the chart */
+    border-radius: 10px;  /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Optional shadow */
+  }
+  
+  /* Ensures the canvas resizes well */
+  #comparisonChart {
+    width: 100% !important;
+    /*height: 500px !important;   Set fixed height or adjust as necessary */
+  }
+  
+  .prediction-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .prediction-form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .prediction-form input,
+  .prediction-form select {
+    padding: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 200px;
+  }
+  
+  .prediction-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .prediction-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .prediction-result {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  
+  
+  canvas {
+    width: 100% !important;  /* Ensure the canvas takes full container width */
+    height: 100% !important; /* Ensure the canvas takes full container height */
+  }
+  
+  @media (max-width: 768px) {
+    .prediction-form {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .chart-container {
+      width: 100%;
+    }
+  }
+
+
+  /* Table Styling */
+.portfolio-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-table th, .portfolio-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.portfolio-table th {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+.portfolio-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.portfolio-table tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+.portfolio-table td {
+    font-size: 14px;
+    color: #333;
+}
+
+.portfolio-table .change {
+    font-weight: bold;
+}
+
+.portfolio-table .positive {
+    color: green;
+}
+
+.portfolio-table .negative {
+    color: red;
+}
+
+.portfolio-table .gain-loss {
+    font-weight: bold;
+}
+
+
+/* General Styling */
+.about-us {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+/* Story Section */
+.story-section, .mission-section, .team-section, .contact-section {
+    margin-bottom: 40px;
+}
+
+.story-section h2, .mission-section h2, .team-section h2, .contact-section h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.story-section p, .mission-section p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+    width: 30%;
+}
+
+.team-member-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    font-size: 1.3em;
+    color: #007BFF;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 1.1em;
+    color: #777;
+}
+
+/* Contact Section */
+.contact-section p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-member {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Hero Section */
+.heroh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/static/images/stock1.jpg'); /* Correct static URL path */
+    background-size: cover;  /* Ensure the image covers the entire container */
+    background-position: center center;  /* Center the image */
+    background-repeat: no-repeat;  /* Prevent image repetition */
+    color: white;
+    text-align: center;
+    padding: 0 1em;
+}
+
+.heroh-content {
+    max-width: 800px;
+}
+
+
+.heroh h1 {
+        font-size: 3em; /* Keep as is */
+        color: white;
+        margin-bottom: 0.5em;
+    }
+
+
+.heroh p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+
+.ctah {
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: #c22ba4;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+.ctah:hover {
+    background-color: #003d7a;
+}
+
+/* About Section */
+.abouth {
+    background-color: #f4f4f4;
+    padding: 4em 0;
+    text-align: center;
+}
+
+.abouth h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.abouth p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Features Section */
+.features {
+    padding: 4em 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+/* Feature Box */
+.feature-box {
+    display: inline-block;
+    background-color: #f9f9f9;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    margin: 1.5em;
+    text-align: center;
+    width: 400px;  /* You can adjust this for responsiveness */
+    transition: transform 0.4s ease-in-out;
+}
+
+.feature-box:hover {
+    transform: translateY(-20px);  /* Hover effect to lift the box */
+}
+
+/* Feature Icon */
+.feature-icon {
+    font-size: 3em;
+    color: #007BFF;
+    margin-bottom: 1em;
+}
+
+/* Feature Heading */
+.feature h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 0.8em;
+}
+
+/* Feature Description */
+.feature p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Scroll Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Delays for Sequential Appearances */
+.feature[data-aos="fade-up"] {
+    animation-delay: var(--aos-delay);
+}
+
+@media (max-width: 768px) {
+    .feature-box {
+        width: 100%;
+        margin: 1em 0;
+    }
+}
+
+
+/* Apply animation to content */
+.abouth p, .features h2, .features .feature p {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.abouthp {
+    animation-delay: 0.9s;
+}
+
+.features h2 {
+    animation-delay: 2s;
+}
+
+.features .feature p {
+    animation-delay: 1.5s;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .heroh h1 {
+        font-size: 2.5em;
+    }
+    
+    .heroh p {
+        font-size: 1em;
+    }
+
+    .ctah {
+        padding: 0.8em 1.5em;
+    }
+
+    .abouth h2 {
+        font-size: 2em;
+    }
+
+    .features h2 {
+        font-size: 2em;
+    }
+
+    .feature h3 {
+        font-size: 1.5em;
+    }
+}

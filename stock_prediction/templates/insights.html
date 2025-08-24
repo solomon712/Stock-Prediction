@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Comparison Trend</h1>
+
+
+<div class="chart-container" style="height: 400px;">
+  <canvas id="comparisonChart"></canvas>
+</div>
+
+<h1>Prediction vs Actual Chart</h1>
+
+<div class="chart-container" style="height: 400px;">
+  <canvas id="predictionVsActualChart"></canvas>
+</div>
+
+<h1>Moving Average Trend</h1>
+
+<div class="chart-container" style="height: 400px;">
+  <canvas id="movingAverageChart"></canvas>
+</div>
+
+<h1>Risk vs Reward Simulation</h1>
+
+<div class="chart-container" style="height: 400px;">
+  <canvas id="riskVsRewardChart"></canvas>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  
+  var labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']; 
+  var predicted_values = [10, 15, 11, 15, 12, 25, 30]; // Predicted prices
+  var actual_values = [9.8, 14, 18, 12, 18, 22, 28]; // Actual prices
+  var moving_average = [9.9, 14.5, 14.5, 14.5, 14.8, 18, 24]; // Moving Average data
+
+  //  (Predicted vs Actual)
+  var ctx1 = document.getElementById('comparisonChart').getContext('2d');
+  var comparisonChart = new Chart(ctx1, {
+    type: 'line', 
+    data: {
+      labels: labels,  // X-axis labels (Months)
+      datasets: [{
+        label: 'Predicted Price',
+        data: predicted_values,  // Y-axis data for Predicted Price
+        borderColor: 'blue',
+        fill: false  
+      }, {
+        label: 'Actual Price',
+        data: actual_values,  // Y-axis data for Actual Price
+        borderColor: 'red',
+        fill: false  
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true  // Ensure the Y-axis starts from zero
+        }
+      }
+    }
+  });
+
+  // Create the prediction vs actual chart
+  var ctx2 = document.getElementById('predictionVsActualChart').getContext('2d');
+  var predictionVsActualChart = new Chart(ctx2, {
+    type: 'bar',  // Bar chart for comparison
+    data: {
+      labels: labels,  // X-axis labels (Months)
+      datasets: [{
+        label: 'Predicted Price',
+        data: predicted_values,  // Y-axis data for Predicted Price
+        backgroundColor: 'blue',
+        borderColor: 'blue',
+        borderWidth: 1
+      }, {
+        label: 'Actual Price',
+        data: actual_values,  // Y-axis data for Actual Price
+        backgroundColor: 'red',
+        borderColor: 'red',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  // Create the moving average chart
+  var ctx3 = document.getElementById('movingAverageChart').getContext('2d');
+  var movingAverageChart = new Chart(ctx3, {
+    type: 'line',  // Line chart for Moving Average
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Moving Average',
+        data: moving_average,
+        borderColor: 'green',
+        fill: false
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  // Create the risk vs reward chart
+  var ctx4 = document.getElementById('riskVsRewardChart').getContext('2d');
+  var riskVsRewardChart = new Chart(ctx4, {
+    type: 'scatter',  // Scatter chart for risk vs reward
+    data: {
+      datasets: [{
+        label: 'Risk vs Reward',
+        data: [
+          {x: 1, y: 10},  // Example data points (risk, reward)
+          {x: 2, y: 20},
+          {x: 3, y: 30},
+          {x: 4, y: 40},
+          {x: 5, y: 50}
+        ],
+        backgroundColor: 'purple'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Risk Level'
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'Reward Potential'
+          }
+        }
+      }
+    }
+  });
+</script>
+
+{% endblock %}

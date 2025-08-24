@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Stock Predictions</h1>
+
+<form id="predictionForm" class="prediction-form">
+  <label for="stockSymbol">Stock Symbol: </label>
+  <input type="text" id="stockSymbol" placeholder="Enter stock symbol" required>
+
+  <label for="timePeriod">Time Period: </label>
+  <select id="timePeriod">
+    <option value="1">1 Week</option>
+    <option value="2">1 Month</option>
+    <option value="3">1 Year</option>
+  </select>
+
+  <button type="submit">Predict</button>
+</form>
+
+<div class="prediction-result">
+  <h2>Prediction Result</h2>
+  <div class="chart-container">
+    <canvas id="predictionChart"></canvas>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.getElementById('predictionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    
+    var stockSymbol = document.getElementById('stockSymbol').value;
+    var timePeriod = document.getElementById('timePeriod').value;
+
+    var labels = ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'];  // Example labels for the week
+    var predictedValues = Array.from({length: 5}, () => Math.floor(Math.random() * 100) + 10);  // Random simulated predictions
+
+   
+    var ctx = document.getElementById('predictionChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Predicted Price',
+          data: predictedValues,
+          borderColor: 'blue',
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  });
+</script>
+<section class="hero">
+<a href="/insights/" class="cta">More Info</a>
+</section>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Your Portfolio</h1>
+
+<!-- Portfolio Table -->
+<table class="portfolio-table">
+  <thead>
+    <tr>
+      <th>Stock Symbol</th>
+      <th>Shares</th>
+      <th>Purchase Price</th>
+      <th>Current Price</th>
+      <th>Total Value</th>
+      <th>Change</th>
+      <th>Total Gain/Loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>APPLE</td>
+      <td>10</td>
+      <td>$140</td>
+      <td>$150</td>
+      <td>$1500</td>
+      <td>+7.14%</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>GOOGLE</td>
+      <td>5</td>
+      <td>$2700</td>
+      <td>$2800</td>
+      <td>$14000</td>
+      <td>+3.70%</td>
+      <td>$500</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

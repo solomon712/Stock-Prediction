@@ -1,0 +1,94 @@
+Solomon Bhaskar
+Project: Stock Predictor Model
+Purpose: This project demonstrates the development of a stock prediction model, which aims to predict stock trends and assist users in making informed investment decisions. It is created as part of the interview round to showcase skills in data analysis, machine learning, and stock market insights.
+
+---------------------------------------------------------------------------------------------------------
+
+open cmd prompt 
+
+1} pip install Django
+3} install the required libraries
+4} python manage.py migrate [To set up any db]
+5} cd \stock\stock_prediction [Go to the folder where you find manage.py ]
+6} run the cmd :- python manage.py runserver
+7} open the server http://127.0.0.1:8000/ given in the cmd prompt .
+
+-----------------------------------------------------------------------------------------------------
+
+Languages and Frameworks Used:
+
+HTML: Structure of web pages
+CSS: Styling of the pages 
+JavaScript: Dynamic elements and animations on pages
+Django: Backend framework for handling requests and rendering templates
+Python: Data processing
+
+----------------------------------------------------------------------------------------------------
+
+Pages and Their Features:
+
+1 . Home Page:
+
+Purpose: Introduction to the Stock Prediction service.
+Features:
+Welcome message and brief description.
+Call-to-action (CTA) button directing to predictions.
+Engaging animation on scroll and attractive design for better user interaction.
+
+
+2 . Portfolio Page:
+
+Purpose: Display of stock holdings and their current values.
+Features:
+Table of stock symbols, shares, current prices, and total values.
+Dynamic calculation of total value based on shares and price.
+Design elements include card-like boxes with box shadows for each stock entry.
+
+
+3 . Insights Page:
+
+Purpose: Provide data-driven insights about stock trends and predictions.
+Features:
+Display various statistical insights related to stocks.
+Graphs to visualize stock trends over time.
+
+
+3 . About Page:
+
+Purpose: Introduction to the team behind the project and mission.
+Features:
+Story of the team and mission.
+Team members and their roles listed.
+Contact details for user inquiries.
+
+
+4 . Predictions Page:
+
+Purpose: Show predicted stock values and trends.
+Features:
+Stock prediction graphs showing future trends.
+Options to customize stock predictions based on user preferences.
+
+
+
+---------------------------------------------------------------------------
+
+
+Graphs and Their Purpose:
+
+Real-time Stock Prediction Graphs:
+
+Purpose: Displays predicted stock trends in real time based on historical data.
+Type of Graphs: Line graphs, bar graphs, or candlestick charts, depending on the data and time intervals.
+Significance: Helps users visualize potential stock movements for better decision-making.
+Portfolio Value Graph:
+
+Purpose: Shows the value change of a user's portfolio over time.
+Type of Graphs: Line graph showing cumulative stock value.
+Stock Trend Analysis:
+
+Purpose: Shows historical stock data trends and insights for a more informed decision-making process.
+Type of Graphs: Line or bar graphs showing stock price fluctuations.
+
+
+
